@@ -6,12 +6,14 @@ from flask_migrate import Migrate
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
-# db.init_app(app)
 
-db = SQLAlchemy(app)
+db.init_app(app)
+
+with app.app_context():
+    db.create_all()
+    
 migrate = Migrate(app, db)
-
-
+    
 @app.route('/restaurants', methods=['GET'])
 def get_restaurants():
     restaurants = Restaurant.query.all()
@@ -53,3 +55,6 @@ def create_restaurant_pizza():
         return jsonify({'errors': str(e)}), 400
     except IntegrityError:
         return jsonify({'errors': 'validation errors'}), 400
+
+if __name__ == "__main__":
+     app.run(debug=True)
