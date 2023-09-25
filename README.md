@@ -7,7 +7,7 @@
 
 <li>Python
 <li>JSON
-<li>API
+<li>PostMan
 
 **Setup/Installation Requirements**
 

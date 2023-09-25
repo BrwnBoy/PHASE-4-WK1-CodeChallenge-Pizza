@@ -1,6 +1,8 @@
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import validates
 
+db = SQLAlchemy()
+
 class Restaurant(db.Model):
     __tablename__ = 'restaurants'
 
