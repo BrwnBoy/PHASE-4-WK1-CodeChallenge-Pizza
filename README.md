@@ -8,6 +8,7 @@
 <li>Python
 <li>JSON
 <li>PostMan
+<li>Swagger
 
 **Setup/Installation Requirements**
 
@@ -34,8 +35,6 @@ POST /restaurant_pizzas:*creates a new RestaurantPizza record, associating a piz
 (5)**Error handling**: *The application includes error handling to return appropriate error messages and status codes when things go wrong. For example, if you try to get details for a restaurant that doesn't exist, it will return a "Restaurant not found" error.*
 
 **In summary, this Flask application provides a RESTful API for managing a database of pizza restaurants and pizzas. It includes routes for creating, reading, and deleting data, and it uses SQLAlchemy for data modeling and validation.**
-
-
 
 #### License 
 
