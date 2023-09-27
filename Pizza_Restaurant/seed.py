@@ -1,7 +1,9 @@
 from app import app
-from models import db, Restaurant, Pizza, RestaurantPizza
+from models import db, Restaurant, Pizza, Price, Ingredient
 
 with app.app_context():
+    db.create_all()
+
     # Restaurants
     restaurant1 = Restaurant(name='Dominion Pizza')
     restaurant2 = Restaurant(name='Pizza Hut')
