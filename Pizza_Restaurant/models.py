@@ -45,18 +45,14 @@ class Pizza(db.Model):
         }
 
 class Price(db.Model):
-    __tablename__ = 'prices'
-    
     id = db.Column(db.Integer, primary_key=True)
     value = db.Column(db.Float, nullable=False)
-    pizza_id = db.Column(db.Integer, db.ForeignKey('pizzas.id'), nullable=False)
+    pizza_id = db.Column(db.Integer, db.ForeignKey('pizza.id'), nullable=False)
 
 class Ingredient(db.Model):
-    __tablename__ = 'ingredients'
-    
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
-    pizza_id = db.Column(db.Integer, db.ForeignKey('pizzas.id'), nullable=False)
+    pizza_id = db.Column(db.Integer, db.ForeignKey('pizza.id'), nullable=False)
     
 class RestaurantPizza(db.Model):
     __tablename__ = 'restaurant_pizzas'
