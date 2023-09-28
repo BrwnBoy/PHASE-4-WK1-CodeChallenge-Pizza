@@ -46,6 +46,8 @@ def get_pizzas():
 @app.route('/restaurant_pizzas', methods=['POST'])
 def create_restaurant_pizza():
     data = request.get_json()
+    if data is None:
+        return jsonify({'errors': 'No data provided'}), 400
     try:
         restaurant_pizza = RestaurantPizza(price=data['price'], pizza_id=data['pizza_id'], restaurant_id=data['restaurant_id'])
         db.session.add(restaurant_pizza)
