@@ -19,7 +19,7 @@
 
 ### What Goes Into Making The Programs Run:
 
-(1)**Models**: *The application uses SQLAlchemy to define three models: Restaurant, Pizza, and RestaurantPizza. The Restaurant and Pizza models represent restaurants and pizzas, respectively. The RestaurantPizza model represents the many-to-many relationship between restaurants and pizzas, and also includes the price of a specific pizza at a specific restaurant.*
+(1)**Models**: *The application uses SQLAlchemy to define three models: Restaurant, Pizza, Price, Ingredients and RestaurantPizza. The Restaurant and Pizza models represent restaurants and pizzas, respectively. The RestaurantPizza model represents the many-to-many relationship between restaurants and pizzas, and also includes the price of a specific pizza at a specific restaurant.*
 
 (2)**Validations**: *The application includes validations on the Restaurant and RestaurantPizza models. For example, it ensures that a restaurant's name is unique and less than 50 words in length, and that the price of a pizza at a restaurant is between 1 and 30.*
 
@@ -31,11 +31,11 @@ POST /restaurant_pizzas:*creates a new RestaurantPizza record, associating a piz
 
 (4)**Running the server and making requests**: *The application is designed to be run as a server that responds to HTTP requests. You can use a tool like Postman to send these requests and view the responses.*
 
-(5)**Error handling**: *The application includes error handling to return appropriate error messages and status codes when things go wrong. For example, if you try to get details for a restaurant that doesn't exist, it will return a "Restaurant not found" error.*
+(5)**Deployment**: **
+
+(6)**Error handling**: *The application includes error handling to return appropriate error messages and status codes when things go wrong. For example, if you try to get details for a restaurant that doesn't exist, it will return a "Restaurant not found" error.*
 
 **In summary, this Flask application provides a RESTful API for managing a database of pizza restaurants and pizzas. It includes routes for creating, reading, and deleting data, and it uses SQLAlchemy for data modeling and validation.**
-
-
 
 #### License 
 
