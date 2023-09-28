@@ -3,9 +3,11 @@ from models import db, Restaurant, Pizza, RestaurantPizza
 from sqlalchemy.exc import IntegrityError
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+import os
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
+os.getenv('DATABASE_URL', 'sqlite:///app.db')
 
 db.init_app(app)
 

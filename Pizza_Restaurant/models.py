@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import validates
+import os
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
@@ -49,7 +50,7 @@ class Price(db.Model):
     
     id = db.Column(db.Integer, primary_key=True)
     value = db.Column(db.Float, nullable=False)
-    pizza_id = db.Column(db.Integer, db.ForeignKey('pizza.id'), nullable=False)
+    pizza_id = db.Column(db.Integer, db.ForeignKey('pizzas.id'), nullable=False)
 
 class Ingredient(db.Model):
     __tablename__ = 'ingredients'
