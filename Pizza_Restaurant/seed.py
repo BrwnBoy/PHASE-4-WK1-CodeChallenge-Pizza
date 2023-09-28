@@ -1,5 +1,5 @@
 from app import app
-from models import db, Restaurant, Pizza, Price, Ingredient, RestaurantPizza
+from models import db, Restaurant, Pizza, Price, Ingredient
 
 with app.app_context():
     # Restaurants
