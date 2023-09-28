@@ -31,7 +31,7 @@ POST /restaurant_pizzas:*creates a new RestaurantPizza record, associating a piz
 
 (4)**Running the server and making requests**: *The application is designed to be run as a server that responds to HTTP requests. You can use a tool like Postman to send these requests and view the responses.*
 
-(5)**Deployment**: **
+(5)**Deployment**: *Toughest aspect to the entire process.*
 
 (6)**Error handling**: *The application includes error handling to return appropriate error messages and status codes when things go wrong. For example, if you try to get details for a restaurant that doesn't exist, it will return a "Restaurant not found" error.*
 
