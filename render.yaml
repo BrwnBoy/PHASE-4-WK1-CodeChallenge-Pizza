@@ -1,0 +1,6 @@
+services:
+- type: web
+  name: pizza-restaurant
+  env: python
+  buildCommand: pip freeze> requirements.txt
+  startCommand: gunicorn app:app
