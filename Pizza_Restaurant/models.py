@@ -34,8 +34,8 @@ class Pizza(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
+    pizza_id = db.Column(db.Integer, db.ForeignKey('pizzas.id'), nullable=False)
     ingredients = db.relationship('Ingredient', backref='pizza', lazy=True)
-    restaurant_id = db.Column(db.Integer, db.ForeignKey('restaurants.id'), nullable=False)
     prices = db.relationship('Price', backref='pizza', lazy=True)
 
     def to_dict(self):
