@@ -13,17 +13,6 @@ with app.app_context():
         db.session.add(new_restaurant)
         db.session.commit()
 
-pizzas = [
-    {"name": "Cheese", "restaurant.id": "1", "pizza": "pizza1"},
-    {"name": "Cheese", "restaurant.id": "2", "pizza": "pizza2"}
-]
-with app.app_context():
-    print('🍕 Odering Pizza')
-    for pizza in pizzas:
-       new_pizza = Pizza(name=pizza["name"], id=pizza["restaurant.id"], pizza=pizza["pizza"])
-       db.session.add(new_pizza)
-       db.session.commit()
-
 ingredients = [
     {"ingredient": "Dough", "pizza": "pizza1"},
     {"ingredient": "Tomato Sauce", "pizza": "pizza1"},
