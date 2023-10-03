@@ -13,7 +13,7 @@ conda
 conda-package-handling
 conda_package_streaming
 cryptography
-Faker==19.6.2
+Faker
 flasgger==0.9.7.1
 Flask==2.2.2
 Flask-Cors==3.0.10
