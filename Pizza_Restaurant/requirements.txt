@@ -52,7 +52,6 @@ PyYAML==6.0.1
 referencing
 render==1.0.0
 requests
-rpds-py
 ruamel.yaml
 ruamel.yaml.clib
 six==1.16.0
