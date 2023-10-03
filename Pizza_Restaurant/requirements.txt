@@ -33,7 +33,7 @@ Jinja2==3.1.2
 jsonify==0.5
 jsonpatch
 jsonpointer==2.0
-jsonschema==4.19.1
+jsonschema
 jsonschema-specifications==2023.7.1
 Mako==1.2.3
 MarkupSafe==2.1.1
