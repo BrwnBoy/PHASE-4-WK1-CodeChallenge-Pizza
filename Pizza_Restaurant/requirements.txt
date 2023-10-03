@@ -49,10 +49,10 @@ python-dateutil==2.8.2
 python-dotenv==0.21.0
 pytz==2022.4
 PyYAML==6.0.1
-referencing==0.30.2
+referencing
 render==1.0.0
 requests
-rpds-py==0.10.3
+rpds-py
 ruamel.yaml
 ruamel.yaml.clib
 six==1.16.0
