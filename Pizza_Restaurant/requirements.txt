@@ -34,7 +34,7 @@ jsonify==0.5
 jsonpatch
 jsonpointer==2.0
 jsonschema
-jsonschema-specifications==2023.7.1
+jsonschema-specifications
 Mako==1.2.3
 MarkupSafe==2.1.1
 mistune==3.0.1
