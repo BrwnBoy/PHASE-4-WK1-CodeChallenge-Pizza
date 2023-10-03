@@ -8,7 +8,7 @@
 <li>Python
 <li>JSON
 <li>PostMan
-
+****
 **Setup/Installation Requirements**
 
 *To run the application, in your terminal*
@@ -31,12 +31,10 @@ POST /restaurant_pizzas:*creates a new RestaurantPizza record, associating a piz
 
 (4)**Running the server and making requests**: *The application is designed to be run as a server that responds to HTTP requests. You can use a tool like Postman to send these requests and view the responses.*
 
-(5)**Deployment**: *Toughest aspect to the entire process.*
-
-(6)**Error handling**: *The application includes error handling to return appropriate error messages and status codes when things go wrong. For example, if you try to get details for a restaurant that doesn't exist, it will return a "Restaurant not found" error.*
+(5)**Error handling**: *The application includes error handling to return appropriate error messages and status codes when things go wrong. For example, if you try to get details for a restaurant that doesn't exist, it will return a "Restaurant not found" error.*
 
 **In summary, this Flask application provides a RESTful API for managing a database of pizza restaurants and pizzas. It includes routes for creating, reading, and deleting data, and it uses SQLAlchemy for data modeling and validation.**
-
+****
 #### License 
 
 Copyright (c) 2023 Brian Mwangi Maina
@@ -58,3 +56,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+****
+**Deployed Application Link**:()
+****

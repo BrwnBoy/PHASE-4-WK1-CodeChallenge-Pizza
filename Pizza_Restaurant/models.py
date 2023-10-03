@@ -1,12 +1,13 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import validates
-import os
+from flask_migrate import Migrate
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
-os.getenv('DATABASE_URL', 'sqlite:///app.db')
+
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 
 class Restaurant(db.Model):
     __tablename__ = 'restaurants'
