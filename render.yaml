@@ -3,4 +3,4 @@ services:
   name: PizzaRestaurant
   env: python
   buildCommand: pip install -r requirements.txt
-  startCommand: gunicorn settings:app
+  startCommand: gunicorn app.settings:app
