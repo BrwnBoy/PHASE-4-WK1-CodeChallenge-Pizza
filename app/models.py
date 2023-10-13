@@ -32,7 +32,6 @@ class Restaurant(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), unique=True)
-    address = db.Column(db.String)
 
     pizzas = db.relationship(
         "Pizza", secondary="restaurant_pizzas", back_populates="restaurants"
