@@ -1,60 +1,69 @@
-from random import randint, choice
-from models import db, Restaurant, Pizza, Price, Ingredient
+from random import randint, choice, sample
+
+from faker import Faker
+
+from app.models import db, Pizza, Restaurant, RestaurantPizza
 from app import app
 
-restaurants = [
-    {"name": "Dominion Pizza", "address": "Address 1"},
-    {"name": "Pizza Hut", "address": "Address 2"}
-]
+faker = Faker()
+
 with app.app_context():
+    Pizza.query.delete()
     Restaurant.query.delete()
-    db.session.commit()
-    
-with app.app_context():
-    print('🍕 Obtaining Restaurants')
-    for restaurant in restaurants:
-        existing_restaurant = Restaurant.query.filter_by(name=restaurant["name"]).first()
-        if existing_restaurant is None:
-            new_restaurant = Restaurant(name=restaurant["name"], address=restaurant["address"])
-            db.session.add(new_restaurant)
-            db.session.commit()
+    RestaurantPizza.query.delete()  
 
-pizzas = [
-    {"name": "Cheese", "pizza": "pizza1"},
-    {"name": "Pepperoni", "pizza": "pizza2"}
+pizzas = []
+    # List of pizza toppings
+    # List of pizza toppings
+toppings = [
+    "Pepperoni",
+    "Mushrooms",
+    "Onions",
+    "Sausage",
+    "Bacon",
+    "Extra Cheese",
+    "Green Peppers",
+    "Black Olives",
+    "Pineapple",
+    "Spinach",
+    "Jalapenos",
+    "Artichoke Hearts",
+    "Anchovies",
+    "Tomatoes",
+    "Ham",
+    "Chicken",
+    "Feta Cheese",
 ]
-with app.app_context():
-    print('🍕 Odering Pizza')
-    for pizza in pizzas:
-       new_pizza = Pizza(name=pizza["name"], pizza_id=pizza["pizza"])
-       db.session.add(new_pizza)
-       db.session.commit()
 
-ingredients = [
-    {"ingredient": "Dough", "pizza": "pizza1"},
-    {"ingredient": "Tomato Sauce", "pizza": "pizza1"},
-    {"ingredient": "Cheese", "pizza": "pizza1"},
-    {"ingredient": "Dough", "pizza": "pizza2"},
-    {"ingredient": "Tomato Sauce", "pizza": "pizza2"},
-    {"ingredient": "Cheese", "pizza": "pizza2"},
-    {"ingredient": "Pepperoni", "pizza": "pizza2"}
-]
-with app.app_context():
-    print('🍕 Placing Toppings on Pizzas')
-    for ingredient in ingredients:
-       new_ingredient = Ingredient(name=ingredient["ingredient"], pizza_id=ingredient["pizza"])
-       db.session.add(new_ingredient)
-       db.session.commit()
+# Function to generate a random pizza name
+def generate_pizza():
+    num_toppings = faker.random_int(min=1, max=len(toppings))
+    selected_toppings = [toppings[i] for i in range(num_toppings)]
+    return f"{', '.join(selected_toppings)} Pizza"
 
-prices = [
-    {"price": "5", "pizza": "pizza1"},
-    {"price": "10", "pizza": "pizza2"}
-]
-with app.app_context():
-    print('🍕 Obtaining Price')
-    for price in prices:
-       new_price = Price(value=price["price"], pizza_id=price["pizza"])
-       db.session.add(new_price)
-       db.session.commit()
+for i in range(10):
+    # Generate a random pizza name
+    pizza_name = generate_pizza()
+    p = Pizza(name=pizza_name, ingredients=choice(toppings))
+    pizzas.append(p)
+
+db.session.add_all(pizzas)
+
+restaurants = []
+for i in range(10):
+    r = Restaurant(name=faker.company(), address=faker.address())
+    restaurants.append(r)
+
+db.session.add_all(restaurants)
+
+restaurant_pizzas = []
+for i in range(20):
+    rp = RestaurantPizza(
+        price=randint(1, 30), pizza_id=randint(1, 10), restaurant_id=randint(1, 10)
+        )
+    restaurant_pizzas.append(rp)
+
+db.session.add_all(restaurant_pizzas)
+db.session.commit()    
        
 print("🍕 Your Pizza is on the way!")
